@@ -5,7 +5,7 @@ import Expense from './components/Expenses/Expense.js';
 import NewExpense from './components/NewExpense/NewExpense';
 
 const App = () => {
-  const expense = [
+  const expenses = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -28,12 +28,18 @@ const App = () => {
     
   ];
   
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  };
+
   return (
     <div className="App">
-      <NewExpense />
-      <Expense items={expense}/>
+      <NewExpense onAddExpense = {addExpenseHandler}/>
+      <Expense items={expenses}/>
     </div>
   );
 }
+//이미 상위, 하위 파일로 연결되어있는데 굳이 lifting을 할 이유가 있는가?>
 
 export default App;

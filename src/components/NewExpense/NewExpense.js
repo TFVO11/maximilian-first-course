@@ -3,13 +3,13 @@ import './NewExpense.css';
 import ExpenseForm from './ExpenseForm.js';
 
 
-const NewExpense = () => {
+const NewExpense = (props) => {
     const saveExpenseDataHandler = (enteredExpenseData) => {
         const expenseData = {
             ...enteredExpenseData,
             id: Math.random().toString()
         };
-        console.log(expenseData);
+        props.onAddExpense(expenseData);
     };
 //여기서 매개변수가 왜 홀로 변수 안에 열거 되어있는가? 바로 매개변수는 함수 밖에서
 //받아오는 값인데 이 값이 enteredtitle같은 것이다. 참고로 인자는 밖에서 매개변수로
