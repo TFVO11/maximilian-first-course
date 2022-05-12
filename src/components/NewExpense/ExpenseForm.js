@@ -79,6 +79,7 @@ const ExpenseForm = (props) => {
                     <input type='date' min="2019-01-01" max="2022-12-31" value={enterDate} onChange={DateChangeHandler} />
                 </div>
                 <div className="new-expense__actions">
+                    <button type="button" onClick={props.onCancel}>cancel</button>
                     <button type="submit" >Add Expense</button>
                 </div>
             </div>
@@ -90,3 +91,5 @@ const ExpenseForm = (props) => {
 //이벤트가 일어날 때 입력한 값이 먼저 set시리지에 저장이 되고 제출된 그 값이 onSubmit 함수를 통해 expenseDate에 저장이 된다.
 //하지만 그 값이 화면상에 그대로 노출되어있는데 이 값을 초기화해주기 위해 value에 default값을 넣어주어서 마무리했다.
 export default ExpenseForm;
+
+//<input> 태그에서 onChange 속 달라지는 state가 인자로 전달이 되고 그 인자의 값이 연산을 처리한다, 그래서 값들이 꼬여서 들어갈 일이 없다.
